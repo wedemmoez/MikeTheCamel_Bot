@@ -38,9 +38,13 @@ with open("mike.txt", "r") as f:
         quotes.append(line.strip('\n'))
         lines += 1
 
-text = quotes[r.randrange(0, len(quotes), 1)]
+text = "**" + quotes[r.randrange(0, len(quotes), 1)] + "**"
 
-room_dict = get_rooms(token)[u'items']
+print text
+
+room_dict = get_rooms(a_t)[u'items']
+print room_dict
 for i in range(0,len(room_dict)):
     if room_dict[i][u'type'] == 'group':
-        post_file(a_t, room_dict[i], text)
+        print(post_file(a_t, room_dict[i][u'id'], text))
+        # print room_dict[i][u'id']
