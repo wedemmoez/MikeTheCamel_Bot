@@ -39,7 +39,7 @@ text = "**" + quotes[r.randrange(0, len(quotes), 1)] + "**"
 print text
 
 room_dict = get_rooms(token)[u'items']
-print room_dict
+
 for i in range(0,len(room_dict)):
     if room_dict[i][u'type'] == 'group':
         print(post_file(token, room_dict[i][u'id'], text))
